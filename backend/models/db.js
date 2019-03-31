@@ -15,7 +15,7 @@ class db {
         });
       },
       function (connection, callback) {
-        rethinkdb.dbCreate('pure-stories-dev').run(connection, function (err, result) {
+        rethinkdb.dbCreate('purestories').run(connection, function (err, result) {
           if (err) {
             console.log("Database already created");
           } else {
@@ -25,7 +25,7 @@ class db {
         });
       },
       function (connection, callback) {
-        rethinkdb.db('pure-stories-dev').tableCreate('author').run(connection, function (err, result) {
+        rethinkdb.db('purestories').tableCreate('author').run(connection, function (err, result) {
           connection.close();
           if (err) {
             console.log("table already created");
@@ -53,7 +53,7 @@ class db {
     rethinkdb.connect({
       host: 'localhost',
       port: 28015,
-      db: 'pure-stories-dev'
+      db: 'purestories'
     }, function (err, connection) {
       callback(err, connection);
     });

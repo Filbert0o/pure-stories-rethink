@@ -3,20 +3,20 @@ require('dotenv').config({path: '../.env'})
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-// import passport from 'passport';
 import path from 'path';
 import logger from 'morgan';
 import cors from 'cors';
+var http = require('http').Server(app);
 
 import busboy from 'connect-busboy';
 import busboyBodyParser from 'busboy-body-parser';
 
+//rethink
+import db from './models/db';
+
 // Import routes here
 import stories from './controllers/stories';
 import authors from './controllers/authors';
-
-//rethink
-// import r from 'rethinkdb';
 
 // Create our app instances
 const app = express();
@@ -25,12 +25,10 @@ app.use(express.static(path.join(__dirname, '../dist/client')));
 
 
 // Set our port to either a predetermined port number if you have set it up, or 3001
-const API_PORT = process.env.PORT || 8080;
+const API_PORT = process.env.PORT || 3000;
 
-// mongoose.connect(process.env.MONGO_URI)
-// let db = mongoose.connection
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
+let dbModel = new db();
+dbModel.setupDb();
 // let connection = null;
 // r.connect({host: 'localhost', port: 28015}, (err, conn) => {
 //   if (err) throw err;
@@ -63,3 +61,6 @@ app.get('*', (req, res) => {
 
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
+// http.listen(3000, function () {
+//   console.log('listening on port 3000');
+// });
