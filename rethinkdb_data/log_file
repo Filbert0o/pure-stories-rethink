@@ -1,0 +1,44 @@
+2019-03-30T09:23:25.677761000 0.268655s notice: Recursively removing directory /Users/filbert0o/side-projects/pure-stories-rethinkdb/rethinkdb_data/tmp
+2019-03-30T09:23:25.681366000 0.272264s notice: Initializing directory /Users/filbert0o/side-projects/pure-stories-rethinkdb/rethinkdb_data
+2019-03-30T09:23:25.681524000 0.272417s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/filbert0o/side-projects/pure-stories-rethinkdb/rethinkdb_data' did not already exist or is empty.)
+2019-03-30T09:23:25.681594000 0.272487s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2019-03-30T09:23:25.702035000 0.292930s notice: Running on Darwin 17.7.0 x86_64
+2019-03-30T09:23:25.702094000 0.292988s notice: Loading data from directory /Users/filbert0o/side-projects/pure-stories-rethinkdb/rethinkdb_data
+2019-03-30T09:23:25.859504000 0.450404s info: Automatically using cache size of 100 MB
+2019-03-30T09:23:25.859519000 0.450418s warn: Cache size does not leave much memory for server and query overhead (available memory: 992 MB).
+2019-03-30T09:23:25.859538000 0.450438s warn: Cache size is very low and may impact performance.
+2019-03-30T09:23:25.862740000 0.453639s notice: Listening for intracluster connections on port 29015
+2019-03-30T09:23:25.866085000 0.456985s notice: Listening for client driver connections on port 28015
+2019-03-30T09:23:25.866330000 0.457230s notice: Listening for administrative HTTP connections on port 8080
+2019-03-30T09:23:25.866336000 0.457235s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2019-03-30T09:23:25.866345000 0.457245s notice: Listening on driver addresses: 127.0.0.1, ::1
+2019-03-30T09:23:25.866349000 0.457248s notice: Listening on http addresses: 127.0.0.1, ::1
+2019-03-30T09:23:25.866358000 0.457258s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-03-30T09:23:25.866368000 0.457268s notice: Server ready, "Timothys_MacBook_Pro_local_kas" 9120d4cd-2975-46c3-8d06-579517529559
+2019-03-30T09:23:28.761564000 3.352569s notice: Server got SIGINT from pid 334, uid 501; shutting down...
+2019-03-30T09:23:28.761766000 3.352770s notice: Shutting down client connections...
+2019-03-30T09:23:28.761862000 3.352866s notice: All client connections closed.
+2019-03-30T09:23:28.761870000 3.352874s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2019-03-30T09:23:28.765672000 3.356676s notice: Storage engine shut down.
+2019-03-30T10:27:42.513585000 0.047102s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2019-03-30T10:27:42.534686000 0.068201s notice: Running on Darwin 17.7.0 x86_64
+2019-03-30T10:27:42.534812000 0.068326s notice: Loading data from directory /Users/filbert0o/side-projects/pure-stories-rethinkdb/rethinkdb_data
+2019-03-30T10:27:42.585848000 0.119364s info: Automatically using cache size of 100 MB
+2019-03-30T10:27:42.585862000 0.119377s warn: Cache size does not leave much memory for server and query overhead (available memory: 898 MB).
+2019-03-30T10:27:42.585869000 0.119385s warn: Cache size is very low and may impact performance.
+2019-03-30T10:27:42.588100000 0.121616s notice: Listening for intracluster connections on port 29015
+2019-03-30T10:27:42.590200000 0.123716s notice: Listening for client driver connections on port 28015
+2019-03-30T10:27:42.590435000 0.123951s notice: Listening for administrative HTTP connections on port 8080
+2019-03-30T10:27:42.590439000 0.123954s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2019-03-30T10:27:42.590445000 0.123961s notice: Listening on driver addresses: 127.0.0.1, ::1
+2019-03-30T10:27:42.590448000 0.123964s notice: Listening on http addresses: 127.0.0.1, ::1
+2019-03-30T10:27:42.590455000 0.123970s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-03-30T10:27:42.590462000 0.123977s notice: Server ready, "Timothys_MacBook_Pro_local_kas" 9120d4cd-2975-46c3-8d06-579517529559
+2019-03-30T10:33:26.363791000 343.909576s info: Table 1c193132-ba67-4cbf-bee3-a5b3d6feea1e: Starting a new Raft election for term 1.
+2019-03-30T10:33:26.366066000 343.911851s info: Table 1c193132-ba67-4cbf-bee3-a5b3d6feea1e: Added replica on this server.
+2019-03-30T10:33:26.397092000 343.942878s info: Table 1c193132-ba67-4cbf-bee3-a5b3d6feea1e: This server is Raft leader for term 1. Latest log index is 0.
+2019-03-30T14:19:39.319149000 13917.379304s notice: Server got SIGINT from pid 334, uid 501; shutting down...
+2019-03-30T14:19:39.322547000 13917.382702s notice: Shutting down client connections...
+2019-03-30T14:19:39.324538000 13917.384693s notice: All client connections closed.
+2019-03-30T14:19:39.324548000 13917.384702s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2019-03-30T14:19:39.349782000 13917.409936s notice: Storage engine shut down.
