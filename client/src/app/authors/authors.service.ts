@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface IAuthor {
-  _id: string;
+  id: string;
   name: string;
   gender: string;
   birthdate: string;
@@ -34,12 +34,12 @@ export class AuthorsService {
 
   editAuthor(author: IAuthor): Observable<any> {
     return this.http.put(
-      `/api/authors/${author._id}`,
+      `/api/authors/${author.id}`,
       author
     );
   }
 
   deleteAuthor(author: IAuthor): Observable<any> {
-    return this.http.delete(`/api/authors/${author._id}`);
+    return this.http.delete(`/api/authors/${author.id}`);
   }
 }

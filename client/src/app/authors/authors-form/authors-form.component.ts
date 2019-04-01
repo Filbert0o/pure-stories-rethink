@@ -38,7 +38,7 @@ export class AuthorsFormComponent implements OnInit {
     this.descriptionFormGroup = this.formBuilder.group({});
 
     this.author = {
-      _id: '',
+      id: '',
       name: '',
       gender: '',
       birthdate: '',

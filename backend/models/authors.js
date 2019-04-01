@@ -60,7 +60,7 @@ class authors {
     });
   }
 
-  addAuthorData(authorData, callback) {
+  updateAuthor(authorData, callback) {
     async.waterfall([
       function (callback) {
         var authorObject = new db();
@@ -76,16 +76,71 @@ class authors {
           if (err) {
             return callback(true, "Error fetching authors to database");
           }
-          // for (var authorCounter = 0; authorCounter < result.authors.length; authorCounter++) {
-          //   if (result.authors[authorCounter].option === authorData.option) {
-          //     result.authors[authorCounter].vote += 1;
-          //     break;
-          //   }
-          // }
-          rethinkdb.table('author').get(authorData.id).update(result).run(connection, function (err, result) {
+          // result.authors = authorData;
+          rethinkdb.table('author').get(authorData.id).update(authorData).run(connection, function (err, result) {
             connection.close();
             if (err) {
-              return callback(true, "Error updating the vote");
+              return callback(true, "Error updating the author");
+            }
+            callback(null, result);
+          });
+        });
+      }
+    ], function (err, data) {
+      callback(err === null ? false : true, data);
+    });
+  }
+
+  getAuthor(authorData, callback) {
+    async.waterfall([
+      function (callback) {
+        var authorObject = new db();
+        authorObject.connectToDb(function (err, connection) {
+          if (err) {
+            return callback(true, "Error connecting to database");
+          }
+          callback(null, connection);
+        });
+      },
+      function (connection, callback) {
+        rethinkdb.table('author').get(authorData).run(connection, function (err, result) {
+          if (err) {
+            return callback(true, "Error fetching authors to database");
+          }
+          rethinkdb.table('author').get(authorData).run(connection, function (err, result) {
+            connection.close();
+            if (err) {
+              return callback(true, "Error fetching the author");
+            }
+            callback(null, result);
+          });
+        });
+      }
+    ], function (err, data) {
+      callback(err === null ? false : true, data);
+    });
+  }
+
+  deleteAuthor(authorData, callback) {
+    async.waterfall([
+      function (callback) {
+        var authorObject = new db();
+        authorObject.connectToDb(function (err, connection) {
+          if (err) {
+            return callback(true, "Error connecting to database");
+          }
+          callback(null, connection);
+        });
+      },
+      function (connection, callback) {
+        rethinkdb.table('author').get(authorData).run(connection, function (err, result) {
+          if (err) {
+            return callback(true, "Error fetching authors to database");
+          }
+          rethinkdb.table('author').get(authorData).delete().run(connection, function (err, result) {
+            connection.close();
+            if (err) {
+              return callback(true, "Error fetching the author");
             }
             callback(null, result);
           });
